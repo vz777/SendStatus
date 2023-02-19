@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://thelia.net/schema/dic/module"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_1.xsd">
+    <fullnamespace>SendStatus\SendStatus</fullnamespace>
+    <descriptive locale="en_US">
+        <title>Send email on order statut change</title>
+        <subtitle>This is a module that send email when a status is define.</subtitle>
+    </descriptive>
+    <descriptive locale="fr_FR">
+        <title>Envoyer un mail quand la commande change de status</title>
+        <subtitle>Un module qui envoi un mail au changement de status</subtitle>
+    </descriptive>
+    <languages>
+        <language>en_US</language>
+        <language>fr_FR</language>
+    </languages>
+    <version>1.0.0</version>
+    <author>
+        <name>Vincent Bourbon</name>
+        <email>dev@vincentbourbon.fr</email>
+    </author>
+    <type>classic</type>
+    <thelia>2.5.0</thelia>
+    <stability>other</stability>
+</module>

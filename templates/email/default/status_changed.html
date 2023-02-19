@@ -1,0 +1,25 @@
+{extends file="email-layout.tpl"}
+
+{* Do not provide a "Open in browser" link  *}
+{block name="browser"}{/block}
+{* No pre-header *}
+{block name="pre-header"}{/block}
+
+{* Subject  *}
+{block name="email-subject"}{intl l="Your order confirmation Nº %ref" ref={$order_ref}}{/block}
+
+{* Title  *}
+{block name="email-title"}{/block}
+
+{* Content  *}
+{block name="email-content"}
+{loop name="order.invoice" type="order" id=$order_id customer="*"}
+
+    <p>{intl d='sendstatus.email.default' l="We are pleased to inform you that your order number"} {$order_ref} {intl  d='sendstatus.email.default' l="has been shipped on %update_date" update_date={format_date date=$UPDATE_DATE output="date"}} {intl l="with the tracking number"} <strong>{$package}</strong>.</p>
+
+    <p>{intl d='sendstatus.email.default' l='<a href="https://www.colissimo.fr/portail_colissimo/suivreResultat.do?parcelnumber=%package">Click here</a> to track your shipment. You can also enter the tracking number on <a href="https://www.laposte.fr/outils/suivre-vos-envois">https://www.laposte.fr/outils/suivre-vos-envois</a>' package=$package}</p>
+    <p>{intl  d='sendstatus.email.default' l='Thank you for your shopping with us and hope to see you soon on <a href="#">www.yourshop.com</a>'}</p>
+    <p>{intl d='sendstatus.email.default' l="Your on-line store Manager"}<br/>
+        {intl d='sendstatus.email.default' l="Your shop"}</p>
+{/loop}
+{/block}
